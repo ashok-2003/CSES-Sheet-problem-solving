@@ -59,8 +59,8 @@ public class p1 {
     }
     public static void main(String[] args) {
         try {
-            Main.FastReader in=new Main.FastReader();
-            Main.FastWriter out = new Main.FastWriter();
+            p5.FastReader in=new p5.FastReader();
+            p5.FastWriter out = new p5.FastWriter();
             long input =in.nextLong();
             while(input != 1){
                 // so now here if it is odd then we have to multiply it by 3 and add one
