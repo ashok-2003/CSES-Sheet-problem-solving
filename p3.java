@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class p2 {
+public class p3 {
     static class FastReader{
         BufferedReader br;
         StringTokenizer st;
@@ -61,17 +61,20 @@ public class p2 {
         try {
             p3.FastReader in=new p3.FastReader();
             p3.FastWriter out = new p3.FastWriter();
-            int n=in.nextInt();
-            // so now here we have to add to the sum of number
-            long currSum = 0;
-            for (int i = 0; i < n - 1; i++) {
-                int val = in.nextInt();
-                currSum += val;
+            String s = in.next(); // string input
+            char[] str = s.toCharArray();
+            int max = 1;
+            int curr = 1;
+            for (int i = 1; i < str.length; i++) {
+                if(str[i] == str[i-1]){
+                    curr++;
+                    max = Math.max(curr , max);
+                }else{
+                    curr = 1; // reset to the new value
+                }
             }
-            // getting the required sum
-            long requiredSum = ((long)n * (n+1))/2;
-            long requiredVal = (requiredSum - currSum);
-            out.print(requiredVal);
+            out.print(max);
+
             out.close();
         } catch (Exception e) {
             System.out.println(e);
