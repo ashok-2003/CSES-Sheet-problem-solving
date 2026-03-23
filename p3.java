@@ -59,8 +59,8 @@ public class p3 {
     }
     public static void main(String[] args) {
         try {
-            p3.FastReader in=new p3.FastReader();
-            p3.FastWriter out = new p3.FastWriter();
+            p4.FastReader in=new p4.FastReader();
+            p4.FastWriter out = new p4.FastWriter();
             String s = in.next(); // string input
             char[] str = s.toCharArray();
             int max = 1;

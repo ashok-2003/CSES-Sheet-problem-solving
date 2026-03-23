@@ -1,7 +1,8 @@
 import java.io.*;
 import java.util.StringTokenizer;
+import java.util.concurrent.LinkedTransferQueue;
 
-public class p2 {
+public class p4 {
     static class FastReader{
         BufferedReader br;
         StringTokenizer st;
@@ -61,17 +62,23 @@ public class p2 {
         try {
             p4.FastReader in=new p4.FastReader();
             p4.FastWriter out = new p4.FastWriter();
-            int n=in.nextInt();
-            // so now here we have to add to the sum of number
-            long currSum = 0;
-            for (int i = 0; i < n - 1; i++) {
-                int val = in.nextInt();
-                currSum += val;
+            int n = in.nextInt(); // string input
+            long[] arr = new long[n];
+            for (int i = 0; i < n; i++) {
+                arr[i] = in.nextLong();
             }
-            // getting the required sum
-            long requiredSum = ((long)n * (n+1))/2;
-            long requiredVal = (requiredSum - currSum);
-            out.print(requiredVal);
+            // so now we have taken the input let's process it
+            long ans = 0;
+            for(int i = 1; i < n; i++){
+                if(arr[i] < arr[i-1]){
+                    // so now it means we have to perform the operation and make it larger than the previous value
+                    long diff = (arr[i-1] - arr[i]);
+                    ans += diff;
+                    arr[i] += diff;
+                }
+            }
+            out.println(ans);
+
             out.close();
         } catch (Exception e) {
             System.out.println(e);
