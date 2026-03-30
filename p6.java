@@ -59,8 +59,8 @@ public class p6 {
     }
     public static void main(String[] args) {
         try {
-            p6.FastReader in=new p6.FastReader();
-            p6.FastWriter out = new p6.FastWriter();
+            p7.FastReader in=new p7.FastReader();
+            p7.FastWriter out = new p7.FastWriter();
             int testCases=in.nextInt();
             while(testCases-- > 0){
                 long n = in.nextLong();
