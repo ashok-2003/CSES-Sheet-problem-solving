@@ -9,19 +9,19 @@ public class p9 {
         System.out.println(ans);
     }
     private static long powTwo(int n){
-        int modulo = (int)1e9+7;
+        int modulo = (int)1e9+7;g
         // this function return the 2 power n
         long ans = 1;
         long base = 2;
 
         // this work on the principal like 2^8 can be written as 2^4 * 2^4 then so on
         while(n > 0){
-            if(n % 2 == 1){
+            if( (n & 1) == 1){ // this right most bit is 1 so we have to multiply
                 ans = (ans * base) % modulo;
             }
 
-            base = (base * base) % modulo;
-            n = n/2;
+            base = (base * base) % modulo; // doubling the base for the next bit
+            n = n >> 1;
         }
 
         return ans;
