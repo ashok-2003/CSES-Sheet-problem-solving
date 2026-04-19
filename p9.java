@@ -5,16 +5,25 @@ public class p9 {
         int n = in.nextInt();
         in.close();
 
-        int ans = powTwo(n);
+        long ans = powTwo(n);
         System.out.println(ans);
     }
-    private static int powTwo(int n){
+    private static long powTwo(int n){
         int modulo = (int)1e9+7;
         // this function return the 2 power n
-        int ans = 1;
-        for(int i = 0; i < n; i++){
-            ans = (ans * 2) % modulo;
+        long ans = 1;
+        long base = 2;
+
+        // this work on the principal like 2^8 can be written as 2^4 * 2^4 then so on
+        while(n > 0){
+            if(n % 2 == 1){
+                ans = (ans * base) % modulo;
+            }
+
+            base = (base * base) % modulo;
+            n = n/2;
         }
+
         return ans;
     }
 }
