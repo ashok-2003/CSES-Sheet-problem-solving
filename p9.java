@@ -9,7 +9,7 @@ public class p9 {
         System.out.println(ans);
     }
     private static long powTwo(int n){
-        int modulo = (int)1e9+7;g
+        int modulo = (int)1e9+7;
         // this function return the 2 power n
         long ans = 1;
         long base = 2;
