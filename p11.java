@@ -42,6 +42,7 @@ public class p11 {
         try {
             p11.FastReader in = new p11.FastReader();
             int n = in.nextInt();
+            StringBuilder sb = new StringBuilder(1000000);
             while (n-- > 0) {
                 long a = in.nextLong();
                 long b = in.nextLong();
@@ -55,12 +56,12 @@ public class p11 {
                 // so a should not be greater than 2 * b
 
                 if ((a + b) % 3 == 0 && (Math.max(a, b) <= 2 * Math.min(a, b))) {
-                    System.out.println("YES");
+                    sb.append("YES\n");
                 } else {
-                    System.out.println("NO");
+                    sb.append("NO\n");
                 }
-
             }
+            System.out.print(sb);
 
 
         }catch (Exception e) {
