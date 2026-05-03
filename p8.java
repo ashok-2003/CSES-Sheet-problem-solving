@@ -18,13 +18,13 @@ public class p8 {
 
     }
     private static void equalSet(int n, long sum){
-        /**
+        /*
          * Greedy approach: Pick largest numbers first until next would exceed halfSum.
          * The remaining difference (diff) is always < last, and since we have all
          * numbers 1 to last available, diff can always be found.
          *
          * Proof: After loop, tempSum + last > halfSum, so diff = halfSum - tempSum < last.
-         * Since numbers 1..last are all available, diff is always reachable.
+         * Since numbers 1.last are all available, diff is always reachable.
          */
 
         long halfSum = sum / 2;
