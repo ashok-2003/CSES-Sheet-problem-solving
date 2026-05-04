@@ -15,20 +15,11 @@ public class p13 {
     }
     private static String convertToBinary(int val, int place){
         // it will give the binary conversion of string to the demanding places
-        StringBuilder ans = new StringBuilder();
-        while(val > 0){
-            ans.insert(0,val & 1);
-            val = val >> 1;
+        StringBuilder sb = new StringBuilder();
+        for(int i = place-1; i >= 0; i--){
+            sb.append((val >> i) & 1); // as this will make sure that 01 should not be written as 1
         }
-        // so now based on the current length, we have to add that many zeros in the starting
-        int currLen = ans.length();
-        if(place - currLen > 0){
-            for(int i = place-currLen; i > 0; i--){
-                ans.insert(0,"0");
-            }
-        }
-
-        return ans.toString();
+        return sb.toString();
 
     }
 }
