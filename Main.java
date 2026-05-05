@@ -59,17 +59,15 @@ public class Main {
     }
     public static void main(String[] args) {
         try {
-            p5.FastReader in=new p5.FastReader();
-            p5.FastWriter out = new p5.FastWriter();
-            int testCases=in.nextInt();
-            while(testCases-- > 0){
-                // code here
-            }
-            out.close();
+            goodQuestion();
         } catch (Exception e) {
             System.out.println(e);
             return;
         }
+    }
+    private static void goodQuestion(){
+        System.out.println("Question:13 - Gray Code");
+        System.out.println("Question:14 - Tower of Hanoi");
     }
 
 }
