@@ -68,6 +68,7 @@ public class Main {
     private static void goodQuestion(){
         System.out.println("Question:13 - Gray Code");
         System.out.println("Question:14 - Tower of Hanoi");
+        System.out.println("Question:15 - Creating String");
     }
 
 }
