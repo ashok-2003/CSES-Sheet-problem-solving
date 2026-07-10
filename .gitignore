@@ -1,0 +1,17 @@
+# Compiled class files & build output
+*.class
+out/
+build/
+target/
+bin/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Claude / tooling
+.claude/
+.claude-flow/
+
+# OS
+.DS_Store
