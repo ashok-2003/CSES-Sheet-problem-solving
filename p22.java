@@ -8,7 +8,7 @@ public class p22 {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < n; i++) {
             long val = in.nextLong();
-            long sol = findNum(val);
+            long sol = optimizedFindNum(val);
             sb.append(sol).append("\n");
         }
         in.close();
@@ -53,5 +53,26 @@ public class p22 {
         return indexNumber%10;
 
 
+    }
+    private static long optimizedFindNum(long pos){
+        // so now we have to find out what's the number is and which index we need
+        long start = 1;
+        long digit = 1;
+        long count = 9;
+        while (pos > (count * digit)){
+            pos = pos - (count * digit);
+            count *= 10;
+            start *= 10;
+            digit++;
+        }
+        // so now to find the digit
+        long number = start + ( (pos-1) / digit );
+        long digitIndex = (pos-1)%digit;
+
+        long loop = digit - digitIndex - 1;
+        while (loop-- > 0){
+            number = number / 10;
+        }
+        return number%10;
     }
 }
