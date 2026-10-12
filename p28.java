@@ -70,7 +70,7 @@ public class p28 {
 
                 // so now if the index is less than 0 return -1 and skip it
 
-                int val = findFirst(taken, index);
+                int val = recFindFirst(taken, index);
                 if(val == -1){
                     sb.append("-1").append("\n");
                 }else{
@@ -132,7 +132,7 @@ public class p28 {
 
         if(index < 0) return -1;
         if(index == arr[index]) return  index;
-        arr[index] = findFirst(arr , arr[index]);
+        arr[index] = recFindFirst(arr , arr[index]);
         return arr[index];
     }
 }
