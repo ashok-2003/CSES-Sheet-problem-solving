@@ -107,27 +107,32 @@ public class p28 {
 
     static int findFirst(int[] arr , int index){
         if(index < 0 ) return -1;
-        if(arr[index] == index) return index;
+        int current = index;
+        while (current >= 0 && arr[current] != current){
+            current = arr[current]; // so it means that travelling through the values
+        }
+
+        int freeSpot = current;
+
+        // so now updating the path for the future calls
+        current = index; // so now this time we know the value which is the start in this case
+        while (current >= 0 && arr[current] != current){
+            int nextOnPath = arr[current];
+            arr[current] = freeSpot;
+            current = nextOnPath;
+        }
+
+        return freeSpot;
+
+    }
+
+    static int recFindFirst(int[] arr, int index){
+
+        // this is faster
+
+        if(index < 0) return -1;
+        if(index == arr[index]) return  index;
         arr[index] = findFirst(arr , arr[index]);
-        return arr[index]; // so here what we are doing is that
-
-
-//        // PASS 1: just walk and find where the chain ends. Change nothing.
-//        int current = start;
-//        while (current != -1 && sign[current] != current) {
-//            current = sign[current];
-//        }
-//        int freeSpot = current;   // the answer
-//
-//        // PASS 2: walk the same chain again, and write the answer
-//        // on every sign along the way
-//        current = start;
-//        while (current != -1 && sign[current] != current) {
-//            int nextOnPath = sign[current];   // remember where the old sign pointed
-//            sign[current] = freeSpot;         // overwrite with the final answer
-//            current = nextOnPath;             // continue on the ORIGINAL path
-//        }
-//
-//        return freeSpot;
+        return arr[index];
     }
 }
